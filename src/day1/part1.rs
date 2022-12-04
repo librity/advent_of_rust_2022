@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   part_1.rs                                          :+:      :+:    :+:   */
+/*   part1.rs                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:56:59 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/12/03 21:43:59 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/12/03 22:45:05 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// rustc part_1.rs -o a.out && ./a.out
+#![allow(dead_code)]
 
+use crate::day1::INPUT_FILE_PATH;
 use std::io::BufRead;
-
-const INPUT_FILE_PATH: &str = "./input";
 
 fn read_file_string(filepath: &str) -> Result<String, Box<dyn std::error::Error>> {
     let data = std::fs::read_to_string(filepath)?;
@@ -43,7 +42,7 @@ fn print_file_line_by_line(filepath: &str) -> Result<(), Box<dyn std::error::Err
     Ok(())
 }
 
-fn print_max_calories() -> Result<(), Box<dyn std::error::Error>> {
+fn print_max_calories_v1() -> Result<(), Box<dyn std::error::Error>> {
     let file = std::fs::File::open(INPUT_FILE_PATH)?;
     let reader = std::io::BufReader::new(file);
     let mut elf_calories = 0;
@@ -77,7 +76,7 @@ fn result_to_line(option: Option<String>) -> String {
     }
 }
 
-fn print_max_calories_v2() -> std::io::Result<()> {
+pub fn print_max_calories() -> std::io::Result<()> {
     let file = std::fs::File::open(INPUT_FILE_PATH)?;
     let reader = std::io::BufReader::new(file);
     let mut elf_calories = 0;
@@ -100,16 +99,4 @@ fn print_max_calories_v2() -> std::io::Result<()> {
 
     println!("max_calories: {}", max_calories);
     Ok(())
-}
-
-fn main() {
-    // file_string_demo();
-    // print_file_line_by_line(INPUT_FILE_PATH);
-
-    // match print_max_calories() {
-    //     Ok(_) => (),
-    //     Err(error) => println!("Error: {}", error),
-    // }
-
-    print_max_calories_v2();
 }
