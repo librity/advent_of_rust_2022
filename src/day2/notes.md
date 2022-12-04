@@ -13,3 +13,5 @@ https://adventofcode.com/2022/day/2
 - https://users.rust-lang.org/t/when-does-rust-prefer-to-be-implicit/38636
 
 ## Part 2
+
+- https://stackoverflow.com/questions/38045700/how-do-i-declare-multiple-mutable-variables-at-the-same-time
