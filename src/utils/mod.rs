@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   part1.rs                                           :+:      :+:    :+:   */
+/*   mod.rs                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 20:56:59 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/12/04 11:04:44 by lpaulo-m         ###   ########.fr       */
+/*   Created: 2022/12/04 10:19:39 by lpaulo-m          #+#    #+#             */
+/*   Updated: 2022/12/04 10:28:53 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-use crate::dayx;
+use std::{
+    fs::File,
+    io::{BufRead, BufReader, Lines},
+};
 
-pub fn call() {
-  println!("Part 1: {}.", 0);
+pub fn get_input_lines(filepath: &str) -> Lines<BufReader<File>> {
+    let file = File::open(filepath);
+    BufReader::new(file.unwrap()).lines()
 }

@@ -6,10 +6,12 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:56:59 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/12/03 23:42:04 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/12/04 11:04:36 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-use crate::day2::INPUT_FILE;
+use crate::day2;
 
-pub fn call() {}
+pub fn call() {
+  println!("Part 2: {}.", 0);
+}
