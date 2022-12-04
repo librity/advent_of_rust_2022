@@ -6,37 +6,31 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:56:59 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/12/03 22:46:48 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/12/03 23:34:16 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-use crate::day1::INPUT_FILE_PATH;
-use std::io::BufRead;
+use crate::day1::INPUT_FILE;
+use std::{
+    fs::File,
+    io::{BufRead, BufReader},
+};
 
-// fn get_input_buffer() -> Result<std::io::BufReader<&str>, std::io::Error> {
-//     let file = std::fs::File::open(day1::INPUT_FILE_PATH)?;
-//     Ok(std::io::BufReader::new(file))
-// }
-
-fn result_to_line(option: Option<String>) -> String {
-    match option {
-        None => "0".to_string(),
-        Some(string) => string,
-    }
+fn get_input_buffer() -> BufReader<File> {
+    let file = File::open(INPUT_FILE);
+    BufReader::new(file.unwrap())
 }
 
-pub fn print_top_three() -> std::io::Result<()> {
-    let file = std::fs::File::open(INPUT_FILE_PATH)?;
-    let reader = std::io::BufReader::new(file);
-    let (mut elf_calories, mut max_calories) = (0, 0);
+pub fn print_top_three_sum() {
+    let reader = get_input_buffer();
+    let mut elf_calories = 0;
+    let mut calories: Vec<i32> = Vec::new();
 
     for result in reader.lines() {
-        let line = result_to_line(result.ok());
+        let line = result.unwrap();
 
         if line.eq("") {
-            if elf_calories > max_calories {
-                max_calories = elf_calories;
-            }
+            calories.push(elf_calories);
             elf_calories = 0;
             continue;
         }
@@ -45,6 +39,8 @@ pub fn print_top_three() -> std::io::Result<()> {
         elf_calories += current;
     }
 
-    println!("max_calories: {}", max_calories);
-    Ok(())
+    calories.sort_by(|a, b| b.cmp(a));
+    // let top_three_sum = calories[0] + calories[1] + calories[2];
+    let top_three_sum: i32 = calories[0..3].iter().sum();
+    println!("Part 2: {:?} total calories.", top_three_sum);
 }

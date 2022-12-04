@@ -1,5 +1,7 @@
 # Notes
 
+https://adventofcode.com/2022/day/1
+
 ## Part 1
 
 - https://kerkour.com/rust-read-file
@@ -25,3 +27,6 @@
 - https://rust-analyzer.github.io/manual.html#magic-completions
 - https://www.reddit.com/r/rust/comments/3lplt4/declaring_multiple_variables_at_once/
 - https://yandex.com/search/?text=rust+initialize+multiple+variables&lang=en&lr=20924
+- https://stackoverflow.com/questions/60114150/rust-error-the-size-for-values-of-type-dyn-stderrorerror-static-cann
+- https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_by
+- https://stackoverflow.com/questions/26836488/how-to-sort-a-vector-in-rust

@@ -6,16 +6,12 @@
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 22:23:12 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/12/03 22:47:01 by lpaulo-m         ###   ########.fr       */
+/*   Updated: 2022/12/03 23:35:21 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 mod day1;
 
 fn main() {
-    /*
-     * Day 1
-     */
-    day1::part1::print_max_calories().ok();
-    day1::part2::print_top_three().ok();
+    day1::call();
 }
