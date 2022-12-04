@@ -30,3 +30,6 @@ https://adventofcode.com/2022/day/1
 - https://stackoverflow.com/questions/60114150/rust-error-the-size-for-values-of-type-dyn-stderrorerror-static-cann
 - https://doc.rust-lang.org/std/vec/struct.Vec.html#method.sort_by
 - https://stackoverflow.com/questions/26836488/how-to-sort-a-vector-in-rust
+- https://stackoverflow.com/questions/23100534/how-to-sum-the-values-in-an-array-slice-or-vec-in-rust
+- https://stackoverflow.com/questions/36876570/return-first-item-of-vector
+- https://www.reddit.com/r/rust/comments/2ooe03/how_do_i_get_n_elements_from_vec/

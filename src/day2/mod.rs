@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.rs                                            :+:      :+:    :+:   */
+/*   mod.rs                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 22:23:12 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/12/03 23:41:29 by lpaulo-m         ###   ########.fr       */
+/*   Created: 2022/12/03 22:36:53 by lpaulo-m          #+#    #+#             */
+/*   Updated: 2022/12/03 23:43:58 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-mod day1;
-mod day2;
+mod part1;
+mod part2;
 
-fn main() {
-    day1::call();
-    day2::call();
+pub const INPUT_FILE: &str = "inputs/day2";
+
+pub fn call() {
+    println!("=== Day 2 ===");
+    part1::call();
+    part2::call();
 }
