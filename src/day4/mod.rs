@@ -5,23 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-m <lpaulo-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/04 10:19:39 by lpaulo-m          #+#    #+#             */
-/*   Updated: 2022/12/04 20:40:40 by lpaulo-m         ###   ########.fr       */
+/*   Created: 2022/12/03 22:36:53 by lpaulo-m          #+#    #+#             */
+/*   Updated: 2022/12/04 20:25:13 by lpaulo-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-use std::{
-    fs::File,
-    io::{BufRead, BufReader, Lines},
-};
+use crate::utils;
 
-pub type FileLines = Lines<BufReader<File>>;
+mod part1;
+mod part2;
 
-pub fn get_input_lines(filepath: &str) -> Lines<BufReader<File>> {
-    let file = File::open(filepath);
-    BufReader::new(file.unwrap()).lines()
+const INPUT_FILE: &str = "inputs/day4";
+
+pub fn get_input_lines() -> utils::FileLines {
+    utils::get_input_lines(INPUT_FILE)
 }
 
-pub fn str_to_int(string: &str) -> i32 {
-    string.parse().unwrap()
+pub fn call() {
+    println!("=== Day 4 ===");
+    part1::call();
+    part2::call();
 }
